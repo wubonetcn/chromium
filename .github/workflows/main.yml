@@ -4,12 +4,73 @@ on: [push]
 jobs:
   sync:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        part:
+          - android_webview
+          - apps
+          - ash
+          - base
+          - build
+          - build_overrides
+          - buildtools
+          - cc
+          - chrome
+          - chromecast
+          - chromeos
+          - clank
+          - codelabs
+          - components
+          - content
+          - crypto
+          - dbus
+          - device
+          - docs
+          - extensions
+          - fuchsia_web
+          - gin
+          - google_apis
+          - gpu
+          - headless
+          - infra
+          - internal
+          - ios
+          - ios_internal
+          - ipc
+          - media
+          - mojo
+          - net
+          - pdf
+          - ppapi
+          - printing
+          - remoting
+          - rlz
+          - sandbox
+          - services
+          - signing_keys
+          - skia
+          - sql
+          - storage
+          - styleguide
+          - testing
+          - third_party
+          - tools
+          - ui
+          - url
+          - v8
+          - webkit/data
+
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+      - name: Sparse Checkout ${{ matrix.part }}
+        run: |
+          git init
+          git remote add origin https://github.com/wubonetcn/chromium.git
+          git config core.sparseCheckout true
+          echo "${{ matrix.part }}" >> .git/info/sparse-checkout
+          git fetch --depth=1 origin main
+          git checkout main
       
-      - name: Sync to CNB Repository
+      - name: Sync ${{ matrix.part }} to CNB Repository
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:${{ github.workspace }} \
