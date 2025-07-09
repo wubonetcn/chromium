@@ -314,7 +314,7 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling BoringSSL
   # and whatever else without interference from each other.
-  'boringssl_revision': '5ec4b35773155a46dc4a4a1db2046831482100e7',
+  'boringssl_revision': 'c4c06c736016b69df6eee007005858b96c4cd8be',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling Fuchsia sdk
   # and whatever else without interference from each other.
@@ -358,7 +358,7 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling catapult
   # and whatever else without interference from each other.
-  'catapult_revision': '8afd1ff8c58c81d07cca186512a3277c7978cff6',
+  'catapult_revision': '09cd5e163ec0bf4d4c2c7fbd996cd0c3970c8a99',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling CrossBench
   # and whatever else without interference from each other.
@@ -510,7 +510,7 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling llvm-libc
   # and whatever else without interference from each other.
-  'compiler_rt_revision': 'f33cc6bdcba0939db69211726ede600554c0c12e',
+  'compiler_rt_revision': 'e7cced15fb0645b098dcc8e0cc1713a670a1c274',
 
   # If you change this, also update the libc++ revision in
   # //buildtools/deps_revisions.gni.
@@ -1599,7 +1599,7 @@ deps = {
 
   'src/clank': {
     'url': Var('chrome_git') + '/clank/internal/apps.git' + '@' +
-    '16a0f015ec876585065e2e71fd77b27b39033faf',
+    'f018732e4836d3c0133f0bf456186df7a4a6c68e',
     'condition': 'checkout_android and checkout_src_internal',
   },
 
@@ -2629,7 +2629,7 @@ deps = {
     Var('pdfium_git') + '/pdfium.git' + '@' +  Var('pdfium_revision'),
 
   'src/third_party/perfetto':
-    Var('chromium_git') + '/external/github.com/google/perfetto.git' + '@' + '8099b71e1bc701f0ee74360a0cc132cd37e2ef6d',
+    Var('chromium_git') + '/external/github.com/google/perfetto.git' + '@' + 'f6002a8b09f8704e6fd3996d50ba08c9f34908f0',
 
   'src/base/tracing/test/data': {
     'bucket': 'perfetto',
@@ -3851,7 +3851,7 @@ deps = {
 
   'src/components/optimization_guide/internal': {
       'url': Var('chrome_git') + '/chrome/components/optimization_guide.git' + '@' +
-        'ab20714599120e97d96f2f808037a8344a7b1f4a',
+        '0e91d28efae5ae1e2077be76b0e8ad381ddba669',
       'condition': 'checkout_src_internal',
   },
 
