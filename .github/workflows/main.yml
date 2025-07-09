@@ -5,6 +5,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     strategy:
+      max-parallel: 2
       matrix:
         part:
           # 组1：root文件+部分小目录
